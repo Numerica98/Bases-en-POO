@@ -5,7 +5,7 @@
  */
 package conexion;
 
-import java.sql.Connection;
+import com.mysql.jdbc.Connection;
 import java.util.logging.Logger;
 import java.sql.DriverManager;
 import java.sql.SQLException;
