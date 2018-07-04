@@ -5,7 +5,7 @@
  */
 package dao;
 
-import com.sun.istack.internal.logging.Logger;
+
 import conexion.Conexion;
 import interfaces.metodos;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import modelo.Filtro;
-import sun.util.logging.PlatformLogger;
+import java.util.logging.Logger;
 
 /**
  *
@@ -76,9 +76,9 @@ public class FiltroDao implements metodos<Filtro> {
         try{
             System.out.println(c.getCodigo());
             ps= con.getCnx().prepareStatement(SQL_UPDATE);
-            ps.setString(1, g.getMarca());
-            ps.setInt(2, g.getStock());
-            ps.setBoolean(3, c.getExistencia());
+            ps.setString(1, c.getMarca());
+            ps.setInt(2, c.getStock());
+            ps.setBoolean(3, c.isExistencia());
             ps.setString(4, c.getCodigo());
             if (ps.executeUpdate()> 0){
                 return true;
